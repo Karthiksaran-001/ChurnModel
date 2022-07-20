@@ -3,7 +3,6 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-import math
 
 
 def prediction(value):
@@ -42,10 +41,10 @@ st.markdown("Predict the Customer is Churn or Active")
 
 
 with st.form('my_form'):
-    age = st.text_input("Enter Your age")
+    age = st.number_input("Enter Your age")
    
 
-    monthly_income = st.text_input("Enter Your Monthly Income")
+    monthly_income = st.number_input("Enter Your Monthly Income")
     
     gender = st.radio('Pick your gender',['Male','Female'])
     if(gender == "Male"):
@@ -53,10 +52,10 @@ with st.form('my_form'):
     else:
         gender = 1
 
-    tda = st.text_input("Total Debit Amount")
-    tdt = st.text_input("Total Debit Transaction")
-    tca = st.text_input("Total credit Amount")
-    tct = st.text_input("Total credit Transaction")
+    tda = st.number_input("Total Debit Amount")
+    tdt = st.number_input("Total Debit Transaction")
+    tca = st.number_input("Total credit Amount")
+    tct = st.number_input("Total credit Transaction")
     targ_desc = st.radio('Pick your gender',['LOW','MIDDLE' ,'EXECUTIVE' , 'PLATINUM'])
     if(targ_desc == "PLATINUM"):
         targ_desc= 3
@@ -69,7 +68,7 @@ with st.form('my_form'):
 
     submitted = st.form_submit_button("Predict")
 
-value = [[int(age) , float(monthly_income) , int(gender) , float(tda) , int(tdt) , float(tca) , int(tct) , int(targ_desc)]]
+value = [[age , monthly_income , gender , tda , tdt , tca , tct , targ_desc]]
 
 
 
@@ -85,8 +84,6 @@ if(submitted):
     if(predict[0] == "CHURN"):
         Recommendation = recommend(value)
         st.write("Recommend Offer For You : \n" + Recommendation )
-# print(prediction(value))
-# print(recommend(value))
 
 
 
