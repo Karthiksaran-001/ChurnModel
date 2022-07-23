@@ -48,21 +48,7 @@ def recommend(value):
 st.title("Churn Recommendation WebApp")
 st.markdown("Predict the Customer is Churn or Active")
 
-def add_bg_from_url():
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-color: aqua;
-             background-attachment: fixed;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
 
-add_bg_from_url() 
 
 
 with st.form('my_form'):
