@@ -11,3 +11,9 @@ To Run the Docker Image
 ```
 docker run --name mlproject -d -p 5000:8501 karthiksaran11/churnmlproject
 ```
+
+To Check Browser
+
+```
+localhost:5000
+```
