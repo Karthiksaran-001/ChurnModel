@@ -1,5 +1,7 @@
 # ChurnModel
 
+Build Simple Docker Image , To Use Follow 3 instruction Listed below
+
 To Get the Docker Image 
 
 ```
