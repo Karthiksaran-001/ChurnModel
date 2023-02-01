@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: churnmlproject
+  labels:
+    app: churnmlproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: churnmlproject
+  template:
+    metadata:
+      labels:
+        app: churnmlproject
+    spec:
+      containers:
+      - name: churnmlproject
+        image: karthiksaran11/churnmlproject  
+        ports:
+        - containerPort: 8501 
