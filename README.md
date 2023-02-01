@@ -19,3 +19,25 @@ To Check Browser
 ```
 localhost:5000
 ```
+
+To Add Kubernates create Deployment and Service .yaml file
+
+```
+cd "K8"
+
+kubectl create -f churn-deployment.yaml
+
+kubectl create -f churn-svc.yaml
+```
+
+Now file is added Check the status of the service
+
+```
+kubectl get svc
+```
+
+Now App is running on 32165 port , Test any Browser
+
+```
+http://localhost:32165/
+```
